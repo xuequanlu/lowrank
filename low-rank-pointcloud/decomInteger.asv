@@ -1,0 +1,36 @@
+function [ rowNum_patch, colNum_patch, Patchsize ] = decomposeInteger( K )
+%DECOMPOSEINTEGER Summary of this function goes here
+%   Detailed explanation goes here
+
+
+% decompose a number into two integers which are the closest
+factors = factor(K);% from small to big
+n = numel(factors);
+% check if tow factors, and the smallest one is <=3
+while n==2 && (factors(1)<=2||abs(factors(1)-factors(2))>=6)
+    K = K-1;
+    factors = factor(K);
+    n = numel(factors);
+end
+
+Patchsize = K;
+
+allFactors = [1,1; 2,1; 3,1; 2,2; 5,1; 3,2; 7,1; 4,2; 3,3; 5,2;...  %1-10
+    11,1; 4,3; 13,1; 7,2; 5,3; 4,4; 17,1; 6,3; 19,1; 5,4;...   %11-20
+    7,3; 11,2; 23,1; 6,4; 5,5; 13,2; 9,3; 7,4; 29,1; 6,5;... %21-30
+    31,1; 8,4; 11,3; 17,2; 7,5; 6,6; 37,1; 19,2; 13,3; 8,5;...  %31-40
+    41,1; 7,6; 43,1; 11,4; 9,5; 23,2; 47,1; 8,6; 7,7; 10,5;... %41-50
+    17,3; 13,4; 53,1; 9,6; 11,5; 8,7; 19,3; 29,2; 59,1; 10,6;... %51-60
+    61,1; 31,2; 9,7; 8,8; 13,5; 11,6; 67,1; 17,4; 23,3; 10,7;... %61-70
+    71,1; 9,8; 73,1; 37,2; 15,5; 19,4; 11,7; 13,6; 79,1; 10,8;...%71-80
+    9,9; 41,2; 83,1; 12,7; 17,5; 43,2; 29,3; 11,8; 89,1; 10,9;...%81-90
+    13,7; 23,4; 31,3; 47,6; 19,15; 18,16; 97,3; 21,14; 27,11; 20,15;...%91-100
+    101,3; 18,17; 103,3; 24,13; 21,15; 53,6; 107,3; 18,18; 109,3; 22,15;...%101-110
+    ];
+
+rowNum_patch = allFactors(K,1);
+colNum_patch = allFactors(K,2);
+
+
+end
+
