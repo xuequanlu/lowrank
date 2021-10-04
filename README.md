@@ -1,4 +1,4 @@
-# lowrank
+# Low Rank Matrix Approximation for 3D Geometry Filtering, IEEE TVCG 2020
 
 How to use:
 
@@ -12,7 +12,8 @@ Note: the released code is only the basic implementation, which might have sligh
 Please cite our paper:
 
 @ARTICLE{Lu2020lowrank,  
-author={Lu, Xuequan and Schaefer, Scott and Luo, Jun and Ma, Lizhuang and He, Ying},  journal={IEEE Transactions on Visualization and Computer Graphics},   
+author={Lu, Xuequan and Schaefer, Scott and Luo, Jun and Ma, Lizhuang and He, Ying},  
+journal={IEEE Transactions on Visualization and Computer Graphics},   
 title={Low Rank Matrix Approximation for 3D Geometry Filtering},   
 year={2020},  
 volume={},  
