@@ -1,6 +1,6 @@
 # Low Rank Matrix Approximation for 3D Geometry Filtering, IEEE TVCG 2020
 
-# How to use:
+How to use:
 
 (1)	install Matlab (tested successfully on Matlab 2021a, 2015 etc)
 
